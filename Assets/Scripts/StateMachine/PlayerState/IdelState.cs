@@ -5,11 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/StateMachine/PlayerState/Idle", fileName = "IdleState")]
 public class IdelState : PlayerState
 {
-    [SerializeField] private float decelerationSpeed = 20f;
+    [SerializeField] private float decelerationSpeed;
 
     public override void Enter()
     {
-        playerAnimator.Play("Idle");
+        base.Enter();
         playerCurrentSpeed = playerController.PlayerMoveSpeed;
     }
 
@@ -18,6 +18,16 @@ public class IdelState : PlayerState
         if (playerInput.Move)
         {
             playerStateMachine.ChangeState(typeof(RunState));
+        }
+        
+        if (playerInput.Jump)
+        {
+            playerStateMachine.ChangeState(typeof(JumpState));
+        }
+        
+        if (!playerController.IsGrounded)
+        {
+            playerStateMachine.ChangeState(typeof(FallState));
         }
     }
     

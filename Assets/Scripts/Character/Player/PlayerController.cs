@@ -7,12 +7,17 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRigidbody;
     private Transform playerTransform;
+    private PlayerGroundDetector playerGroundDetector;
+
+    public bool IsGrounded => playerGroundDetector.IsGround;
+    public bool IsFalling => playerRigidbody.velocity.y < 0f && !IsGrounded;
     public float PlayerMoveSpeed => MathF.Abs(playerRigidbody.velocity.x);
 
     private void Awake()
     {
         playerRigidbody = GetComponent<Rigidbody>();
         playerTransform = transform;
+        playerGroundDetector = GetComponentInChildren<PlayerGroundDetector>();
     }
 
     public void SetPlayerVelocity(Vector3 velocity)
@@ -29,9 +34,9 @@ public class PlayerController : MonoBehaviour
         playerRigidbody.velocity = new Vector3(velocityX * moveDirection, playerRigidbody.velocity.y);
     }
     
-    public void SetPlayerVelocityY(float velocityY, float moveDirection)
+    public void SetPlayerVelocityY(float velocityY)
     {
-        playerRigidbody.velocity = new Vector3(playerRigidbody.velocity.x, velocityY * moveDirection);
+        playerRigidbody.velocity = new Vector3(playerRigidbody.velocity.x, velocityY);
     }
     
 }

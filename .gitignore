@@ -3,3 +3,6 @@ Logs
 Temp
 .idea
 UserSettings
+ProjectSettings
+Assembly-CSharp.csproj
+Assembly-CSharp.Player.csproj

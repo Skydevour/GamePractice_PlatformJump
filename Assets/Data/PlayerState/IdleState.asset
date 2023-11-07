@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d344a6dde019e4d9455d396d18016e, type: 3}
   m_Name: IdleState
   m_EditorClassIdentifier: 
+  stateName: Idle
+  transitionDurtion: 0.2
   decelerationSpeed: 20
