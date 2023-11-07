@@ -8,6 +8,7 @@ public class PlayerState : ScriptableObject, IState
     protected PlayerStateMachine playerStateMachine;
     protected PlayerInput playerInput;
     protected PlayerController playerController;
+    protected float playerCurrentSpeed;
 
     public void InitComponent(Animator playerAnimator, PlayerStateMachine playerStateMachine, PlayerInput playerInput, PlayerController playerController)
     {

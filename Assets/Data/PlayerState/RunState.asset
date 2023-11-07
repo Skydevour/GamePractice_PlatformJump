@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c107861717b2047a3da9f373a86295, type: 3}
   m_Name: RunState
   m_EditorClassIdentifier: 
+  maxSpeed: 5
+  accelerationSpeed: 15

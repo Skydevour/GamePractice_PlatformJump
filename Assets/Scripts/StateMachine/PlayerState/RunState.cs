@@ -5,10 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/StateMachine/PlayerState/Run", fileName = "RunState")]
 public class RunState : PlayerState
 {
-    [SerializeField] private float runSpeed = 5.0f;
+    [SerializeField] private float maxSpeed = 5.0f;
+    [SerializeField] private float accelerationSpeed = 15.0f;
+
     public override void Enter()
     {
         playerAnimator.Play("Run");
+        playerCurrentSpeed = playerController.PlayerMoveSpeed;
     }
 
     public override void LogicalUpdate()
@@ -21,6 +24,9 @@ public class RunState : PlayerState
 
     public override void PhysicalUpdate()
     {
-        playerController.SetPlayerVelocityX(runSpeed, playerInput.AxesX);
+        // 缓慢加速
+        playerCurrentSpeed = Mathf.MoveTowards(playerCurrentSpeed, maxSpeed, accelerationSpeed * Time.deltaTime);
+        // run状态，axesX不可能为0
+        playerController.SetPlayerVelocityX(playerCurrentSpeed, playerInput.AxesX);
     }
 }

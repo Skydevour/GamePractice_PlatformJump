@@ -5,9 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/StateMachine/PlayerState/Idle", fileName = "IdleState")]
 public class IdelState : PlayerState
 {
+    [SerializeField] private float decelerationSpeed = 20f;
+
     public override void Enter()
     {
         playerAnimator.Play("Idle");
+        playerCurrentSpeed = playerController.PlayerMoveSpeed;
     }
 
     public override void LogicalUpdate()
@@ -17,4 +20,11 @@ public class IdelState : PlayerState
             playerStateMachine.ChangeState(typeof(RunState));
         }
     }
-}
+    
+    public override void PhysicalUpdate()
+    {
+        // 缓慢减速
+        playerCurrentSpeed = Mathf.MoveTowards(playerCurrentSpeed, 0, decelerationSpeed * Time.deltaTime);
+        // 这里不能直接用playerInput.AxesX, 因为可能为0，导致速度直接降低为0，不符合缓慢减速的效果
+        playerController.SetPlayerVelocityX(playerCurrentSpeed, playerController.transform.localScale.x);
+    }}
