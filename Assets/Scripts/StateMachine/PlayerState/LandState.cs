@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/StateMachine/PlayerState/Land", fileName = "LandState")]
 public class LandState : PlayerState
 {
+    [SerializeField] private float stiffTime;
     public override void Enter()
     {
         base.Enter();
@@ -13,6 +14,12 @@ public class LandState : PlayerState
 
     public override void LogicalUpdate()
     {
+        // 落地硬直
+        if (stateDuration <= stiffTime)
+        {
+            return;
+        }
+        
         if (playerInput.Jump)
         {
             playerStateMachine.ChangeState(typeof(JumpState));
@@ -23,6 +30,7 @@ public class LandState : PlayerState
             playerStateMachine.ChangeState(typeof(RunState));
         }
 
+        // 落地状态播放完毕就切换到idlestate
         if (isAnimationFinished)
         {
             playerStateMachine.ChangeState(typeof(IdelState));

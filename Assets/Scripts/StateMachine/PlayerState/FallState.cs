@@ -6,6 +6,7 @@ using UnityEngine;
 public class FallState : PlayerState
 {
     [SerializeField] private AnimationCurve playerSpeedCurve;
+    [SerializeField] private float fallSpeed;
     
     public override void Enter()
     {
@@ -22,6 +23,8 @@ public class FallState : PlayerState
 
     public override void PhysicalUpdate()
     {
+        playerController.SetPlayerVelocityX(fallSpeed, playerInput.AxesX);
+
         // 根据动画播放时间，设置下落速度
         playerController.SetPlayerVelocityY(playerSpeedCurve.Evaluate(stateDuration));
     }

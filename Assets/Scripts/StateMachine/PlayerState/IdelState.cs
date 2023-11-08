@@ -10,7 +10,6 @@ public class IdelState : PlayerState
     public override void Enter()
     {
         base.Enter();
-        playerCurrentSpeed = playerController.PlayerMoveSpeed;
     }
 
     public override void LogicalUpdate()

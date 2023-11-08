@@ -15,4 +15,4 @@ MonoBehaviour:
   stateName: Run
   transitionDurtion: 0.2
   maxSpeed: 5
-  accelerationSpeed: 15
+  accelerationSpeed: 30

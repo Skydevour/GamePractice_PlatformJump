@@ -36,6 +36,7 @@ public class PlayerState : ScriptableObject, IState
     {
         playerAnimator.CrossFade(stateHashId, transitionDurtion);
         stateStartTime = Time.time;
+        playerCurrentSpeed = playerController.PlayerMoveSpeed;
     }
 
     public virtual void Exit()

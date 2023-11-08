@@ -6,6 +6,7 @@ using UnityEngine;
 public class JumpState : PlayerState
 {
     [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpSpeed;
     
     public override void Enter()
     {
@@ -15,9 +16,15 @@ public class JumpState : PlayerState
 
     public override void LogicalUpdate()
     {
-        if (playerController.IsFalling)
+        // 小跳，即松开按键直接切换状态
+        if (playerInput.StopJump || playerController.IsFalling)
         {
             playerStateMachine.ChangeState(typeof(FallState));
         }
+    }
+    
+    public override void PhysicalUpdate()
+    {
+        playerController.SetPlayerVelocityX(jumpSpeed, playerInput.AxesX);
     }
 }
