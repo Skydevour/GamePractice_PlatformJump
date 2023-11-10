@@ -19,6 +19,12 @@ public class FallState : PlayerState
         {
             playerStateMachine.ChangeState(typeof(LandState));
         }
+
+        // 多段跳跃
+        if (playerInput.Jump && playerController.CanJump)
+        {
+            playerStateMachine.ChangeState(typeof(JumpState));
+        }
     }
 
     public override void PhysicalUpdate()

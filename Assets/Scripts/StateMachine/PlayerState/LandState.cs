@@ -14,15 +14,15 @@ public class LandState : PlayerState
 
     public override void LogicalUpdate()
     {
+        if (playerInput.Jump)
+        {
+            playerStateMachine.ChangeState(typeof(JumpState));
+        }
+        
         // 落地硬直
         if (stateDuration <= stiffTime)
         {
             return;
-        }
-        
-        if (playerInput.Jump)
-        {
-            playerStateMachine.ChangeState(typeof(JumpState));
         }
         
         if (playerInput.Move)

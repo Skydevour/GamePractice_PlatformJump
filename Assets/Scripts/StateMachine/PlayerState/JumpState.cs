@@ -7,11 +7,17 @@ public class JumpState : PlayerState
 {
     [SerializeField] private float jumpForce;
     [SerializeField] private float jumpSpeed;
+    [SerializeField] private ParticleSystem jumpVFX;
     
     public override void Enter()
     {
         base.Enter();
         playerController.SetPlayerVelocityY(jumpForce);
+        playerController.CanJump = false;
+        GameObject jumpParticle = PoolManager.Instance.GetAObjFromPool(jumpVFX.gameObject);
+        jumpParticle.AddComponent<ParticleSystemManager>();
+        jumpParticle.transform.position = playerController.transform.position;
+        jumpParticle.transform.rotation = Quaternion.identity;
     }
 
     public override void LogicalUpdate()

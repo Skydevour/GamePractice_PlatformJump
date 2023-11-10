@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public bool IsGrounded => playerGroundDetector.IsGround;
     public bool IsFalling => playerRigidbody.velocity.y < 0f && !IsGrounded;
     public float PlayerMoveSpeed => MathF.Abs(playerRigidbody.velocity.x);
+    public bool CanJump { get; set; }
 
     private void Awake()
     {

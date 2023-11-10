@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateName: Jump
   transitionDurtion: 0.2
-  jumpForce: 6
+  jumpForce: 8
   jumpSpeed: 5
+  jumpVFX: {fileID: 4677385770777475979, guid: 31beca5807f326246860109c534f1383, type: 3}
