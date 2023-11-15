@@ -7,11 +7,6 @@ public class FallState : PlayerState
 {
     [SerializeField] private AnimationCurve playerSpeedCurve;
     [SerializeField] private float fallSpeed;
-    
-    public override void Enter()
-    {
-        base.Enter();
-    }
 
     public override void LogicalUpdate()
     {
@@ -23,7 +18,7 @@ public class FallState : PlayerState
         // 多段跳跃
         if (playerInput.Jump && playerController.CanJump)
         {
-            playerStateMachine.ChangeState(typeof(JumpState));
+            playerStateMachine.ChangeState(typeof(AirJumpState));
         }
     }
 

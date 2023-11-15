@@ -71,6 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starGemVFX: {fileID: 172702712793192669, guid: 7bf4c411ce4a06e49bdbd02d6870b7d9, type: 3}
   starGemClip: {fileID: 8300000, guid: dca3084cb66e8824bab682c584bec504, type: 3}
+  starRotationAxes: {x: 0, y: 60, z: 0}
 --- !u!82 &7565835167357102244
 AudioSource:
   m_ObjectHideFlags: 0

@@ -6,10 +6,11 @@ using UnityEngine.Pool;
 
 public class StarGem : MonoBehaviour
 {
-    [SerializeField] private WaitForSeconds resetTime;
     [SerializeField] private ParticleSystem starGemVFX;
     [SerializeField] private AudioClip starGemClip;
+    [SerializeField] private Vector3 starRotationAxes;
     
+    private WaitForSeconds resetTime;
     private Collider starCollider;
     private MeshRenderer starMeshRenderer; 
     private AudioSource audioSource;
@@ -19,6 +20,11 @@ public class StarGem : MonoBehaviour
         starMeshRenderer = GetComponentInChildren<MeshRenderer>();
         resetTime = new WaitForSeconds(3.0f);
         audioSource = GetComponent<AudioSource>();
+    }
+
+    private void FixedUpdate()
+    {
+        transform.Rotate(starRotationAxes * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -7,11 +7,6 @@ public class IdelState : PlayerState
 {
     [SerializeField] private float decelerationSpeed;
 
-    public override void Enter()
-    {
-        base.Enter();
-    }
-
     public override void LogicalUpdate()
     {
         if (playerInput.Move)
