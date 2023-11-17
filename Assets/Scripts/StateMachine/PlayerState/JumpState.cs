@@ -14,6 +14,7 @@ public class JumpState : PlayerState
         base.Enter();
         playerController.SetPlayerVelocityY(jumpForce);
         playerController.CanJump = false;
+        playerInput.HasJumpBuffer = false;
         GameObject jumpParticle = PoolManager.Instance.GetAObjFromPool(jumpVFX.gameObject);
         jumpParticle.AddComponent<ParticleSystemManager>();
         jumpParticle.transform.position = playerController.transform.position;

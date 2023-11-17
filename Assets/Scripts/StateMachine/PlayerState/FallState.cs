@@ -16,9 +16,15 @@ public class FallState : PlayerState
         }
 
         // 多段跳跃
-        if (playerInput.Jump && playerController.CanJump)
+        if (playerInput.Jump)
         {
-            playerStateMachine.ChangeState(typeof(AirJumpState));
+            if (playerController.CanJump)
+            {
+                playerStateMachine.ChangeState(typeof(AirJumpState));
+                return;
+            }
+
+            playerInput.SetHasJumpBuffer();
         }
     }
 
