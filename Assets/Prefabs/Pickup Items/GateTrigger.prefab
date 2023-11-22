@@ -4841,7 +4841,7 @@ GameObject:
   - component: {fileID: 2894897690811619310}
   - component: {fileID: 2894897690811619311}
   - component: {fileID: -5627538085676534081}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GateTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

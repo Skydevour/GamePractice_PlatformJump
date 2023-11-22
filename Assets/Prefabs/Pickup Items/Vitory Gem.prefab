@@ -14363,7 +14363,7 @@ GameObject:
   - component: {fileID: 6751317616852142909}
   - component: {fileID: 7318909472480001275}
   - component: {fileID: 1070262934217304419}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Vitory Gem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

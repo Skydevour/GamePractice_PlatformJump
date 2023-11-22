@@ -8,8 +8,10 @@ public class PlayerState : ScriptableObject, IState
     [SerializeField] private string stateName;
     // 动画切换的交叉时间
     [SerializeField, Range(0, 1f)] private float transitionDurtion;
+    
     private int stateHashId;
     private float stateStartTime;
+    private Dictionary<string, AudioClip> playerAudioClip;
     
     protected Animator playerAnimator;
     protected PlayerStateMachine playerStateMachine;
@@ -18,25 +20,29 @@ public class PlayerState : ScriptableObject, IState
     protected float playerCurrentSpeed;
     protected bool isAnimationFinished => stateDuration >= playerAnimator.GetCurrentAnimatorStateInfo(0).length;
     protected float stateDuration => Time.time - stateStartTime;
-    
 
     private void OnEnable()
     {
         stateHashId = Animator.StringToHash(stateName);
     }
 
-    public void InitComponent(Animator playerAnimator, PlayerStateMachine playerStateMachine, PlayerInput playerInput, PlayerController playerController)
+    public void InitComponent(Animator playerAnimator, PlayerStateMachine playerStateMachine, PlayerInput playerInput, PlayerController playerController, Dictionary<string, AudioClip> playerAudioClip)
     {
         this.playerAnimator = playerAnimator;
         this.playerStateMachine = playerStateMachine;
         this.playerInput = playerInput;
         this.playerController = playerController;
+        this.playerAudioClip = playerAudioClip;
     }
     public virtual void Enter()
     {
         playerAnimator.CrossFade(stateHashId, transitionDurtion);
         stateStartTime = Time.time;
         playerCurrentSpeed = playerController.PlayerMoveSpeed;
+        if (playerAudioClip.ContainsKey(stateName + "State"))
+        {
+            playerController.PlayerAudioSource.PlayOneShot(playerAudioClip[stateName + "State"]);
+        }
     }
 
     public virtual void Exit()

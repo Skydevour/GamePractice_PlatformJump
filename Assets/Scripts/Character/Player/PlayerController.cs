@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRigidbody;
     private Transform playerTransform;
     private PlayerGroundDetector playerGroundDetector;
+    
+    public AudioSource PlayerAudioSource;
 
     public bool IsGrounded => playerGroundDetector.IsGround;
     public bool IsFalling => playerRigidbody.velocity.y < 0f && !IsGrounded;
@@ -19,6 +21,7 @@ public class PlayerController : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
         playerTransform = transform;
         playerGroundDetector = GetComponentInChildren<PlayerGroundDetector>();
+        PlayerAudioSource = GetComponentInChildren<AudioSource>();
     }
 
     public void SetPlayerVelocity(Vector3 velocity)
