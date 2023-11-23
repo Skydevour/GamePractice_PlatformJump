@@ -24,5 +24,6 @@ public class VictoryGem : PickUpManager
         TriggerParticleSystem(victoryGemVFX);
         TriggerAudioSource(victoryGemClip);
         DisableGameObjectComponent(victoryGemRenderer, victoryGemCollider);
+        EventCenter.TriggerEvent(new ShowVictoryEvent(true));
     }
 }

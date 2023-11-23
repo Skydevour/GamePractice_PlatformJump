@@ -407,6 +407,12 @@
      <Reference Include="unityplastic">
      <HintPath>E:\ProjectForUnity\GameDemo\GamePractice_PlatformJump\Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
      </Reference>
+     <Reference Include="DOTween">
+     <HintPath>E:\ProjectForUnity\GameDemo\GamePractice_PlatformJump\Assets\DOTween\DOTween.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTweenEditor">
+     <HintPath>E:\ProjectForUnity\GameDemo\GamePractice_PlatformJump\Assets\DOTween\Editor\DOTweenEditor.dll</HintPath>
+     </Reference>
      <Reference Include="UnityEditor.iOS.Extensions.Xcode">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2023.1.17f1c1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
      </Reference>

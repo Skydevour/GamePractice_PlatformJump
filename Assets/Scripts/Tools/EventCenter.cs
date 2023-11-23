@@ -83,7 +83,7 @@ public static class EventCenter
         {
             foreach (Delegate action in subscribers.ToArray())
             {
-                (action as Action<T>).Invoke(args);
+                (action as Action<T>)?.Invoke(args);
             }
         }
     }

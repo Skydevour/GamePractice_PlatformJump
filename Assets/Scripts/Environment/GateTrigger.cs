@@ -23,5 +23,6 @@ public class GateTrigger : PickUpManager
         TriggerParticleSystem(gateTriggerVFX);
         TriggerAudioSource(gateTriggerClip);
         DisableGameObjectComponent(gateTriggerRenderer, gateTriggerCollider);
+        EventCenter.TriggerEvent(new GateOpenOrCloseEvent(true));
     }
 }
