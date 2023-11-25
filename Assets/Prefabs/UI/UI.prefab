@@ -1323,7 +1323,6 @@ GameObject:
   - component: {fileID: 1467496969128382383}
   - component: {fileID: 1467496969128382380}
   - component: {fileID: 5588123163663492337}
-  - component: {fileID: 81298559643600857}
   m_Layer: 5
   m_Name: Victory Screen
   m_TagString: Untagged
@@ -1416,18 +1415,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &81298559643600857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467496969128382377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8cf2380f3ab63241957ba8bf3d1b2d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1467496969204292968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,6 +1501,7 @@ GameObject:
   - component: {fileID: 1467496969243288925}
   - component: {fileID: 1467496969243288926}
   - component: {fileID: 1467496969243288927}
+  - component: {fileID: 1324113034167125986}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -1591,6 +1579,20 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!114 &1324113034167125986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467496969243288920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11603bcdf4cb50a43a59807f812ef286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  victoryScreen: {fileID: 1467496969128382383}
+  readyScreen: {fileID: 1467496969525323848}
 --- !u!1 &1467496969267944151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,6 +1793,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1467496969525323849}
   - component: {fileID: 1467496969525323848}
+  - component: {fileID: 4890861877524345884}
+  - component: {fileID: 5328089199510511538}
   m_Layer: 5
   m_Name: Ready Screen
   m_TagString: Untagged
@@ -1826,7 +1830,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467496969525323850}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}
@@ -1842,6 +1846,41 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!95 &4890861877524345884
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467496969525323850}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80c125dd0cd6c5f498b69ffcb374cb0a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5328089199510511538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467496969525323850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af621ae45ef7d4e4b9c4a146e5b1f831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startGame: {fileID: 8300000, guid: 514dfaed2534942e8a5c5f7f253ed89b, type: 3}
 --- !u!1 &1467496969622675667
 GameObject:
   m_ObjectHideFlags: 0
