@@ -16,6 +16,16 @@ public class PlayerController : MonoBehaviour
     public float PlayerMoveSpeed => MathF.Abs(playerRigidbody.velocity.x);
     public bool CanJump;
 
+    private void OnEnable()
+    {
+        EventCenter.StartListenToEvent<PlayerDefeatEvent>(OnPlayerDefeatEvent);
+    }
+
+    private void OnDisable()
+    {
+        EventCenter.StopListenToEvent<PlayerDefeatEvent>(OnPlayerDefeatEvent);
+    }
+
     private void Awake()
     {
         playerRigidbody = GetComponent<Rigidbody>();
@@ -24,6 +34,12 @@ public class PlayerController : MonoBehaviour
         PlayerAudioSource = GetComponentInChildren<AudioSource>();
     }
 
+    private void OnPlayerDefeatEvent(PlayerDefeatEvent evt)
+    {
+        playerRigidbody.useGravity = false;
+        playerRigidbody.velocity = Vector3.zero;
+    }
+    
     public void SetPlayerVelocity(Vector3 velocity)
     {
         playerRigidbody.velocity = velocity;

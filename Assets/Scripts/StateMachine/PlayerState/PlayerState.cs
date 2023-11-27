@@ -11,7 +11,7 @@ public class PlayerState : ScriptableObject, IState
     
     private int stateHashId;
     private float stateStartTime;
-    private Dictionary<string, AudioClip> playerAudioClip;
+    private Dictionary<string, AudioClip[]> playerAudioClip;
     
     protected Animator playerAnimator;
     protected PlayerStateMachine playerStateMachine;
@@ -26,7 +26,7 @@ public class PlayerState : ScriptableObject, IState
         stateHashId = Animator.StringToHash(stateName);
     }
 
-    public void InitComponent(Animator playerAnimator, PlayerStateMachine playerStateMachine, PlayerInput playerInput, PlayerController playerController, Dictionary<string, AudioClip> playerAudioClip)
+    public void InitComponent(Animator playerAnimator, PlayerStateMachine playerStateMachine, PlayerInput playerInput, PlayerController playerController, Dictionary<string, AudioClip[]> playerAudioClip)
     {
         this.playerAnimator = playerAnimator;
         this.playerStateMachine = playerStateMachine;
@@ -41,7 +41,8 @@ public class PlayerState : ScriptableObject, IState
         playerCurrentSpeed = playerController.PlayerMoveSpeed;
         if (playerAudioClip.ContainsKey(stateName + "State"))
         {
-            playerController.PlayerAudioSource.PlayOneShot(playerAudioClip[stateName + "State"]);
+            int index = UnityEngine.Random.Range(0, playerAudioClip[stateName + "State"].Length);
+            playerController.PlayerAudioSource.PlayOneShot(playerAudioClip[stateName + "State"][index]);
         }
     }
 

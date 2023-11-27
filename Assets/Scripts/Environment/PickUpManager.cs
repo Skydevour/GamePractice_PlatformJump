@@ -16,6 +16,12 @@ public class PickUpManager : MonoBehaviour
     {
         SoundEffectPlayer.AudioSource.PlayOneShot(audioSource);
     }
+    
+    protected void TriggerAudioSource(AudioClip[] audioSources)
+    {
+        AudioClip audioClip = audioSources[Random.Range(0, audioSources.Length)];
+        SoundEffectPlayer.AudioSource.PlayOneShot(audioClip);
+    }
 
     protected void DisableGameObjectComponent(MeshRenderer renderer, Collider collider)
     {

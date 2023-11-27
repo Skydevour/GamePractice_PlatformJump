@@ -31,4 +31,5 @@ public class IdelState : PlayerState
         playerCurrentSpeed = Mathf.MoveTowards(playerCurrentSpeed, 0, decelerationSpeed * Time.deltaTime);
         // 这里不能直接用playerInput.AxesX, 因为可能为0，导致速度直接降低为0，不符合缓慢减速的效果
         playerController.SetPlayerVelocityX(playerCurrentSpeed, playerController.transform.localScale.x);
-    }}
+    }
+}

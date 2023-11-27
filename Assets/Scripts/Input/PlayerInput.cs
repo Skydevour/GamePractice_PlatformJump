@@ -20,22 +20,38 @@ public class PlayerInput : MonoBehaviour
 
     private void OnEnable()
     {
-        playerInputAction.GamePlay.Jump.canceled += delegate
-        {
-            HasJumpBuffer = false;
-        };
+        EventCenter.StartListenToEvent<PlayerDefeatEvent>(OnPlayerDefeatEvent);
+    }
+
+    private void OnDisable()
+    {
+        EventCenter.StopListenToEvent<PlayerDefeatEvent>(OnPlayerDefeatEvent);
     }
 
     private void Awake()
     {
         playerInputAction = new PlayerInputAction();
         jumpInputWaitForSeconds = new WaitForSeconds(jumpInputBufferTime);
+        playerInputAction.GamePlay.Jump.canceled += delegate
+        {
+            HasJumpBuffer = false;
+        };
+    }
+    
+    private void OnPlayerDefeatEvent(PlayerDefeatEvent evt)
+    {
+        DisableGameplayInputs();
     }
 
     public void EnableGameplayInputs()
     {
         playerInputAction.GamePlay.Enable();
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void DisableGameplayInputs()
+    {
+        playerInputAction.GamePlay.Disable();
     }
 
     public void SetHasJumpBuffer()

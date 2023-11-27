@@ -5,6 +5,7 @@ using UnityEngine;
 public class ReadyGame : MonoBehaviour
 {
     [SerializeField] private AudioClip startGame;
+    [SerializeField] private PlayerInput playerInput;
     private void NoticeStartGateOpen()
     {
         EventCenter.TriggerEvent(new StartGateOpenEvent(true));
@@ -13,5 +14,6 @@ public class ReadyGame : MonoBehaviour
     private void DisplayStartGameAudio()
     {
         SoundEffectPlayer.AudioSource.PlayOneShot(startGame);
+        playerInput.EnableGameplayInputs();
     }
 }
