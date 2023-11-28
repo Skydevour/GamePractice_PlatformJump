@@ -12,4 +12,12 @@ public class DieState : PlayerState
     {
         base.Enter();
     }
+
+    public override void LogicalUpdate()
+    {
+        if (isAnimationFinished)
+        {
+            playerStateMachine.ChangeState(typeof(FloatState));
+        }
+    }
 }

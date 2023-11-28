@@ -58,6 +58,11 @@ public class PlayerStateMachine : StateMachine
      
      private void OnPlayerDefeatEvent(PlayerDefeatEvent evt)
      {
-          SwitchOnState(stateTable[typeof(DieState)]);
+          ChangeState(stateTable[typeof(DieState)]);
+     }
+
+     private void InitPlayerState()
+     {
+          
      }
 }
