@@ -1051,6 +1051,7 @@ GameObject:
   - component: {fileID: 1467496968177820187}
   - component: {fileID: 1467496968177820191}
   - component: {fileID: 1467496968177820189}
+  - component: {fileID: 1431136393164212850}
   m_Layer: 5
   m_Name: Defeat Screen
   m_TagString: Untagged
@@ -1121,6 +1122,28 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!95 &1431136393164212850
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467496968177820180}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c3ef0e763718f74f9326a8782a77e1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1467496969087110713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,7 +1615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   victoryScreen: {fileID: 1467496969128382383}
-  readyScreen: {fileID: 1467496969525323848}
+  defeatScreen: {fileID: 1467496968177820191}
 --- !u!1 &1467496969267944151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,6 +1904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startGame: {fileID: 8300000, guid: 514dfaed2534942e8a5c5f7f253ed89b, type: 3}
+  playerInput: {fileID: 0}
 --- !u!1 &1467496969622675667
 GameObject:
   m_ObjectHideFlags: 0

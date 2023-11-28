@@ -6,22 +6,29 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private Canvas victoryScreen;
-    [SerializeField] private Canvas readyScreen;
+    [SerializeField] private Canvas defeatScreen;
     private void OnEnable()
     {
-        EventCenter.StartListenToEvent<ShowVictoryEvent>(OnShowVictoryEvent);
-
+        EventCenter.StartListenToEvent<GameVictoryEvent>(OnGameVictoryEvent);
     }
 
     private void OnDisable()
     {
-        EventCenter.StopListenToEvent<ShowVictoryEvent>(OnShowVictoryEvent);
-
+        EventCenter.StopListenToEvent<GameVictoryEvent>(OnGameVictoryEvent);
     }
     
-    private void OnShowVictoryEvent(ShowVictoryEvent evt)
+    private void OnGameVictoryEvent(GameVictoryEvent evt)
     {
-        victoryScreen.GetComponent<Canvas>().enabled = evt.IsVictory;
-        victoryScreen.GetComponent<Animator>().enabled = evt.IsVictory;
+        if (evt.IsVictory)
+        {
+            victoryScreen.GetComponent<Canvas>().enabled = true;
+            victoryScreen.GetComponent<Animator>().enabled = true;
+        }
+        else
+        {
+            defeatScreen.GetComponent<Canvas>().enabled = true;
+            defeatScreen.GetComponent<Animator>().enabled = true;
+        }
+        
     }
 }

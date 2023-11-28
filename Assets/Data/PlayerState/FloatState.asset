@@ -14,3 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateName: Float
   transitionDurtion: 0.2
+  floatSpeed: 0.5
+  floatPosOffset: {x: 0, y: 1, z: -2}
+  floatTargetPos: {x: 4.6146436, y: 0.97008455, z: -2}
+  floatVFXOffset: {x: 0.25, y: 0.5, z: 0}
+  floatVFX: {fileID: 4260479563582157819, guid: 5bfc8a5a68b0a714e98c07c88d52ca53, type: 3}

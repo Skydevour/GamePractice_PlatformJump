@@ -16,15 +16,35 @@ public class PlayerStateMachine : StateMachine
      
      private void OnEnable()
      {
-          EventCenter.StartListenToEvent<PlayerDefeatEvent>(OnPlayerDefeatEvent);
+          EventCenter.StartListenToEvent<GameVictoryEvent>(OnGameVictoryEvent);
      }
 
      private void OnDisable()
      {
-          EventCenter.StopListenToEvent<PlayerDefeatEvent>(OnPlayerDefeatEvent);
+          EventCenter.StopListenToEvent<GameVictoryEvent>(OnGameVictoryEvent);
      }
      
      private void Awake()
+     {
+          InitPlayerState();
+     }
+
+     private void Start()
+     {
+          playerInput.DisableGameplayInputs();
+          SwitchOnState(stateTable[typeof(IdelState)]);
+     }
+     
+     private void OnGameVictoryEvent(GameVictoryEvent evt)
+     {
+          if (evt.IsVictory)
+          {
+               return;
+          }
+          ChangeState(stateTable[typeof(DieState)]);
+     }
+
+     private void InitPlayerState()
      {
           playerAnimator = GetComponentInChildren<Animator>();
           playerInput = GetComponent<PlayerInput>();
@@ -48,21 +68,5 @@ public class PlayerStateMachine : StateMachine
                playerState.InitComponent(playerAnimator, this, playerInput, playerController, playerAudioClip);
                stateTable.Add(playerState.GetType(), playerState);
           }
-     }
-
-     private void Start()
-     {
-          playerInput.DisableGameplayInputs();
-          SwitchOnState(stateTable[typeof(IdelState)]);
-     }
-     
-     private void OnPlayerDefeatEvent(PlayerDefeatEvent evt)
-     {
-          ChangeState(stateTable[typeof(DieState)]);
-     }
-
-     private void InitPlayerState()
-     {
-          
      }
 }
