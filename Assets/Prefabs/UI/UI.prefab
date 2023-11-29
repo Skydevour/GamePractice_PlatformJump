@@ -1052,6 +1052,7 @@ GameObject:
   - component: {fileID: 1467496968177820191}
   - component: {fileID: 1467496968177820189}
   - component: {fileID: 1431136393164212850}
+  - component: {fileID: 2061997735398964134}
   m_Layer: 5
   m_Name: Defeat Screen
   m_TagString: Untagged
@@ -1144,6 +1145,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2061997735398964134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467496968177820180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b7fa4ea64e70bc48a7e94eda235c4e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  retryBtn: {fileID: 1467496967865795298}
+  quitBtn: {fileID: 1467496967588288345}
 --- !u!1 &1467496969087110713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,6 +1361,7 @@ GameObject:
   - component: {fileID: 1467496969128382383}
   - component: {fileID: 1467496969128382380}
   - component: {fileID: 5588123163663492337}
+  - component: {fileID: 8563864253950948117}
   m_Layer: 5
   m_Name: Victory Screen
   m_TagString: Untagged
@@ -1438,6 +1454,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8563864253950948117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467496969128382377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e5fdaff0441d549bd9ba8bcc5cbe3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextBtn: {fileID: 1467496968063722306}
 --- !u!1 &1467496969204292968
 GameObject:
   m_ObjectHideFlags: 0

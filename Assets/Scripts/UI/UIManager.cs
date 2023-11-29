@@ -8,7 +8,6 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private Canvas victoryScreen;
     [SerializeField] private Canvas defeatScreen;
-
     [SerializeField] private AudioClip[] defeatClip;
     private void OnEnable()
     {
