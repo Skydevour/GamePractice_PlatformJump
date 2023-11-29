@@ -20,12 +20,12 @@ public class PlayerInput : MonoBehaviour
 
     private void OnEnable()
     {
-        EventCenter.StartListenToEvent<GameVictoryEvent>(OnGameVictoryEvent);
+        EventCenter.StartListenToEvent<PlayerDieEvent>(OnPlayerDieEvent);
     }
 
     private void OnDisable()
     {
-        EventCenter.StopListenToEvent<GameVictoryEvent>(OnGameVictoryEvent);
+        EventCenter.StopListenToEvent<PlayerDieEvent>(OnPlayerDieEvent);
     }
 
     private void Awake()
@@ -38,12 +38,8 @@ public class PlayerInput : MonoBehaviour
         };
     }
     
-    private void OnGameVictoryEvent(GameVictoryEvent evt)
+    private void OnPlayerDieEvent(PlayerDieEvent evt)
     {
-        if (evt.IsVictory)
-        {
-            return;
-        }
         DisableGameplayInputs();
     }
 

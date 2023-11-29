@@ -1,7 +1,7 @@
-public class GameVictoryEvent
+public class IsGameVictoryEvent
 {
     public readonly bool IsVictory;
-    public GameVictoryEvent(bool isVictory)
+    public IsGameVictoryEvent(bool isVictory)
     {
         IsVictory = isVictory;
     }

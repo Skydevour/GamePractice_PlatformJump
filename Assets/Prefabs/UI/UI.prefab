@@ -1616,6 +1616,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   victoryScreen: {fileID: 1467496969128382383}
   defeatScreen: {fileID: 1467496968177820191}
+  defeatClip:
+  - {fileID: 8300000, guid: 91c68039ec5d440779d554f2876d84cc, type: 3}
+  - {fileID: 8300000, guid: 84c678c4c8f2643c1afb6f6ab2ad3293, type: 3}
+  - {fileID: 8300000, guid: fa5234b2218704e3da5e9fb3e5ee1325, type: 3}
 --- !u!1 &1467496969267944151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +1908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startGame: {fileID: 8300000, guid: 514dfaed2534942e8a5c5f7f253ed89b, type: 3}
+  playerInput: {fileID: 0}
 --- !u!1 &1467496969622675667
 GameObject:
   m_ObjectHideFlags: 0

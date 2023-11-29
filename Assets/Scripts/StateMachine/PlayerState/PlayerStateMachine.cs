@@ -16,12 +16,12 @@ public class PlayerStateMachine : StateMachine
      
      private void OnEnable()
      {
-          EventCenter.StartListenToEvent<GameVictoryEvent>(OnGameVictoryEvent);
+          EventCenter.StartListenToEvent<PlayerDieEvent>(OnPlayerDieEvent);
      }
 
      private void OnDisable()
      {
-          EventCenter.StopListenToEvent<GameVictoryEvent>(OnGameVictoryEvent);
+          EventCenter.StopListenToEvent<PlayerDieEvent>(OnPlayerDieEvent);
      }
      
      private void Awake()
@@ -35,12 +35,8 @@ public class PlayerStateMachine : StateMachine
           SwitchOnState(stateTable[typeof(IdelState)]);
      }
      
-     private void OnGameVictoryEvent(GameVictoryEvent evt)
+     private void OnPlayerDieEvent(PlayerDieEvent evt)
      {
-          if (evt.IsVictory)
-          {
-               return;
-          }
           ChangeState(stateTable[typeof(DieState)]);
      }
 

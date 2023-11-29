@@ -18,12 +18,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        EventCenter.StartListenToEvent<GameVictoryEvent>(OnGameVictoryEvent);
+        EventCenter.StartListenToEvent<PlayerDieEvent>(OnPlayerDieEvent);
     }
 
     private void OnDisable()
     {
-        EventCenter.StopListenToEvent<GameVictoryEvent>(OnGameVictoryEvent);
+        EventCenter.StopListenToEvent<PlayerDieEvent>(OnPlayerDieEvent);
     }
 
     private void Awake()
@@ -34,12 +34,8 @@ public class PlayerController : MonoBehaviour
         PlayerAudioSource = GetComponentInChildren<AudioSource>();
     }
 
-    private void OnGameVictoryEvent(GameVictoryEvent evt)
+    private void OnPlayerDieEvent(PlayerDieEvent evt)
     {
-        if (evt.IsVictory)
-        {
-            return;
-        }
         playerRigidbody.useGravity = false;
         playerRigidbody.velocity = Vector3.zero;
     }

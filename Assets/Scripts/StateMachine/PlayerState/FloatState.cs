@@ -21,6 +21,8 @@ public class FloatState : PlayerState
         floatParticle.transform.parent = playerTransform;
         floatParticle.transform.position = playerPosition + floatVFXOffset;
         floatParticle.transform.rotation = Quaternion.identity;
+        
+        EventCenter.TriggerEvent(new IsGameVictoryEvent(false));
     }
 
     public override void LogicalUpdate()

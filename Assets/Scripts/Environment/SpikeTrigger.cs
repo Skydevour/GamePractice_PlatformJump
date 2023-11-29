@@ -9,7 +9,7 @@ public class SpikeTrigger : MonoBehaviour
     {
         if (other.tag.Equals("Player"))
         {
-            EventCenter.TriggerEvent(new GameVictoryEvent(false));
+            EventCenter.TriggerEvent(new PlayerDieEvent());
         }
     }
 }
