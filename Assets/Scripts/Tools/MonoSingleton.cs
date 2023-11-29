@@ -12,7 +12,7 @@ public class MonoSingleton<T> : MonoBehaviour where T :  MonoBehaviour
         {
             if(instance == null)
             {
-                instance = FindObjectOfType<T>();
+                instance = FindFirstObjectByType<T>();
                 if (instance == null)
                 {
                     Debug.LogError("没有在场景中找到该类,该类的类名为:" + typeof(T).Name);
