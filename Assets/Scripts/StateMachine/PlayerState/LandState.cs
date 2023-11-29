@@ -14,6 +14,11 @@ public class LandState : PlayerState
 
     public override void LogicalUpdate()
     {
+        if (playerController.IsVictory)
+        {
+            playerStateMachine.ChangeState(typeof(VictoryState));
+        }
+        
         if (playerInput.HasJumpBuffer || playerInput.Jump)
         {
             playerStateMachine.ChangeState(typeof(JumpState));

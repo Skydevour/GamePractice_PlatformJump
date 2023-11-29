@@ -14,6 +14,9 @@ public class DieState : PlayerState
         defeatParticle.AddComponent<ParticleSystemManager>();
         defeatParticle.transform.position = playerController.transform.position;
         defeatParticle.transform.rotation = Quaternion.identity;
+        
+        playerInput.DisableGameplayInputs();
+        playerController.GameOverSettings();
     }
 
     public override void LogicalUpdate()

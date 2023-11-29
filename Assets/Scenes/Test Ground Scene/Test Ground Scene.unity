@@ -1639,7 +1639,7 @@ Transform:
   m_GameObject: {fileID: 139370786}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.34, y: 0, z: 0}
+  m_LocalPosition: {x: 24.24, y: 34.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1712,7 +1712,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerAudioSource: {fileID: 0}
-  CanJump: 0
 --- !u!114 &139370792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1738,6 +1737,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5418db91f77146a45a14da1b03cd6dac, type: 2}
   - {fileID: 11400000, guid: 73e784d762923414183c014428a88616, type: 2}
   - {fileID: 11400000, guid: 84b381f042b80f44d82b90102983d8c7, type: 2}
+  - {fileID: 11400000, guid: 201c1574bb4a1db4c94b21f7f705cee1, type: 2}
 --- !u!114 &139370793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7243,7 +7243,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.34, y: 0.8, z: -10}
+  m_LocalPosition: {x: 24.24, y: 35.27, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15193,7 +15193,7 @@ Transform:
   m_GameObject: {fileID: 1971425800}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.34, y: 0.8, z: -10}
+  m_LocalPosition: {x: 24.24, y: 35.27, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16101,8 +16101,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2092910092}
   - component: {fileID: 2092910093}
+  - component: {fileID: 2092910094}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: ToolManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16135,6 +16136,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0dccad096912f4fa50f72aa13de0ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2092910094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092910090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81632911103d9ed4a812a35f84ffba30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSceneIndex: 0
 --- !u!1001 &2093429858
 PrefabInstance:
   m_ObjectHideFlags: 0

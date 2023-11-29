@@ -25,5 +25,6 @@ public class VictoryGem : PickUpManager
         TriggerAudioSource(victoryGemClip);
         DisableGameObjectComponent(victoryGemRenderer, victoryGemCollider);
         EventCenter.TriggerEvent(new IsGameVictoryEvent(true));
+        EventCenter.TriggerEvent(new PlayerVictoryEvent());
     }
 }

@@ -14,16 +14,17 @@ public class PlayerController : MonoBehaviour
     public bool IsGrounded => playerGroundDetector.IsGround;
     public bool IsFalling => playerRigidbody.velocity.y < 0f && !IsGrounded;
     public float PlayerMoveSpeed => MathF.Abs(playerRigidbody.velocity.x);
-    public bool CanJump;
+    public bool CanJump { get; set; }
+    public bool IsVictory { get; private set; }
 
     private void OnEnable()
     {
-        EventCenter.StartListenToEvent<PlayerDieEvent>(OnPlayerDieEvent);
+        EventCenter.StartListenToEvent<PlayerVictoryEvent>(OnPlayerVictoryEvent);
     }
 
     private void OnDisable()
     {
-        EventCenter.StopListenToEvent<PlayerDieEvent>(OnPlayerDieEvent);
+        EventCenter.StopListenToEvent<PlayerVictoryEvent>(OnPlayerVictoryEvent);
     }
 
     private void Awake()
@@ -34,12 +35,17 @@ public class PlayerController : MonoBehaviour
         PlayerAudioSource = GetComponentInChildren<AudioSource>();
     }
 
-    private void OnPlayerDieEvent(PlayerDieEvent evt)
+    private void OnPlayerVictoryEvent(PlayerVictoryEvent evt)
+    {
+        IsVictory = true;
+    }
+
+    public void GameOverSettings()
     {
         playerRigidbody.useGravity = false;
         playerRigidbody.velocity = Vector3.zero;
     }
-    
+
     public void SetPlayerVelocity(Vector3 velocity)
     {
         playerRigidbody.velocity = velocity;

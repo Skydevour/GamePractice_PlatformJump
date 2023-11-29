@@ -19,6 +19,6 @@ public class VictoryScreen : MonoBehaviour
 
     private void ChangeNextScene()
     {
-        SceneLoader.Instance.ReloadCurrentScene();
+        SceneLoader.Instance.ChangeToNextScene();
     }
 }

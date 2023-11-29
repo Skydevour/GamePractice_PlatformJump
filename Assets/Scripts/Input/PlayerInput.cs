@@ -20,12 +20,10 @@ public class PlayerInput : MonoBehaviour
 
     private void OnEnable()
     {
-        EventCenter.StartListenToEvent<PlayerDieEvent>(OnPlayerDieEvent);
     }
 
     private void OnDisable()
     {
-        EventCenter.StopListenToEvent<PlayerDieEvent>(OnPlayerDieEvent);
     }
 
     private void Awake()
@@ -36,11 +34,6 @@ public class PlayerInput : MonoBehaviour
         {
             HasJumpBuffer = false;
         };
-    }
-    
-    private void OnPlayerDieEvent(PlayerDieEvent evt)
-    {
-        DisableGameplayInputs();
     }
 
     public void EnableGameplayInputs()
