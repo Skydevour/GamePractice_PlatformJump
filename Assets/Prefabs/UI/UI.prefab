@@ -1483,6 +1483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextBtn: {fileID: 1467496968063722306}
+  clearanceTimer: {fileID: 1467496967505517433}
 --- !u!1 &1467496969204292968
 GameObject:
   m_ObjectHideFlags: 0
