@@ -18,14 +18,6 @@ public class PlayerInput : MonoBehaviour
     public bool Move => AxesX != 0;
     public bool HasJumpBuffer { get; set; }
 
-    private void OnEnable()
-    {
-    }
-
-    private void OnDisable()
-    {
-    }
-
     private void Awake()
     {
         playerInputAction = new PlayerInputAction();

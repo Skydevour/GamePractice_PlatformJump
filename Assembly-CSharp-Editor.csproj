@@ -88,6 +88,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\Localization\i3.en.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\Localization\images.es.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\Localization\configurehelper.zh-Hans.txt" />
+     <Folder Include="Library\PackageCache\com.unity.device-simulator.devices@1.0.0\Editor\Devices\DeviceOverlays" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\Localization\plastic-gui.en.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\Localization\differences.zh-Hans.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\Localization\commontypes.zh-Hant.txt" />
@@ -123,6 +124,7 @@
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\Localization\semantic.ja.txt" />
      <Folder Include="Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\Localization\binmergetool.es.txt" />
+     <Folder Include="Library\PackageCache\com.unity.device-simulator.devices@1.0.0\Editor" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\Localization\plastic-gui.ja.txt" />
      <None Include="Library\PackageCache\com.unity.postprocessing@3.3.0\PostProcessing\Shaders\Editor\CurveGrid.shader" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\Localization\semantic.en.txt" />
@@ -153,6 +155,7 @@
      <None Include="Library\PackageCache\com.unity.postprocessing@3.3.0\PostProcessing\Shaders\Editor\Trackball.shader" />
      <Folder Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor" />
      <None Include="Library\PackageCache\com.unity.postprocessing@3.3.0\PostProcessing\Shaders\Editor\ConvertToLog.shader" />
+     <Folder Include="Library\PackageCache\com.unity.device-simulator.devices@1.0.0\Editor\Devices" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\Localization\cm.ko.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\Localization\configurehelper.es.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.1.0\Lib\Editor\PlasticSCM\Localization\xdiff.es.txt" />

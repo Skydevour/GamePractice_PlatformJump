@@ -8152,6 +8152,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8563864253950948117, guid: 6bd7ab43aa2018f4d88842da292dec60, type: 3}
+      propertyPath: clearanceTimer
+      value: 
+      objectReference: {fileID: 1604732269}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11997,6 +12001,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 097532d5ed156374dab7997a81ec2fb1, type: 3}
   m_PrefabInstance: {fileID: 1593953529}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1604732269 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1467496967505517433, guid: 6bd7ab43aa2018f4d88842da292dec60, type: 3}
+  m_PrefabInstance: {fileID: 1121420775}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1605209453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16364,6 +16379,7 @@ GameObject:
   - component: {fileID: 2092910092}
   - component: {fileID: 2092910093}
   - component: {fileID: 2092910094}
+  - component: {fileID: 2092910095}
   m_Layer: 0
   m_Name: ToolManager
   m_TagString: Untagged
@@ -16411,6 +16427,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSceneIndex: 0
+--- !u!114 &2092910095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092910090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 955a5d02b570fd34289a872ea7b3fb27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clearanceTime: 0
 --- !u!1001 &2093429858
 PrefabInstance:
   m_ObjectHideFlags: 0

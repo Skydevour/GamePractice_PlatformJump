@@ -11,13 +11,13 @@ public class GateOpenOrClose : MonoBehaviour
     private void OnEnable()
     {
         EventCenter.StartListenToEvent<GateOpenOrCloseEvent>(OnGateOpenOrCloseEvent);
-        EventCenter.StartListenToEvent<StartGateOpenEvent>(OnStartGateOpenEvent);
+        EventCenter.StartListenToEvent<StartGameEvent>(OnStartGameEvent);
     }
 
     private void OnDisable()
     {
         EventCenter.StopListenToEvent<GateOpenOrCloseEvent>(OnGateOpenOrCloseEvent);
-        EventCenter.StopListenToEvent<StartGateOpenEvent>(OnStartGateOpenEvent);
+        EventCenter.StopListenToEvent<StartGameEvent>(OnStartGameEvent);
     }
 
     private void OnGateOpenOrCloseEvent(GateOpenOrCloseEvent evt)
@@ -26,9 +26,9 @@ public class GateOpenOrClose : MonoBehaviour
         passageGate.SetActive(!evt.IsOpenGate);
     }
 
-    private void OnStartGateOpenEvent(StartGateOpenEvent evt)
+    private void OnStartGameEvent(StartGameEvent evt)
     {
-        startGate.SetActive(!evt.IsOpenGate);
+        startGate.SetActive(!evt.IsGameStart);
     }
     
 }

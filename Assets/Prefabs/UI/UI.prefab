@@ -183,6 +183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1467496967575292945}
   - component: {fileID: 1467496967575292948}
+  - component: {fileID: 4785377325391797940}
   m_Layer: 5
   m_Name: Clear Timer
   m_TagString: Untagged
@@ -234,6 +235,21 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &4785377325391797940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467496967575292946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a9fa648436d4d4f8775c9b26b0b1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clearanceTime: {fileID: 1467496969087110719}
+  clearTime: 0
+  isGameStart: 0
 --- !u!1 &1467496967588288347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,6 +1661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   victoryScreen: {fileID: 1467496969128382383}
   defeatScreen: {fileID: 1467496968177820191}
+  clearanceTimer: {fileID: 1467496967575292948}
   defeatClip:
   - {fileID: 8300000, guid: 91c68039ec5d440779d554f2876d84cc, type: 3}
   - {fileID: 8300000, guid: 84c678c4c8f2643c1afb6f6ab2ad3293, type: 3}

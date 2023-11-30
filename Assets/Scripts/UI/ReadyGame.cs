@@ -15,7 +15,7 @@ public class ReadyGame : MonoBehaviour
 
     private void NoticeStartGateOpen()
     {
-        EventCenter.TriggerEvent(new StartGateOpenEvent(true));
+        EventCenter.TriggerEvent(new StartGameEvent(true));
     }
 
     private void DisplayStartGameAudio()
