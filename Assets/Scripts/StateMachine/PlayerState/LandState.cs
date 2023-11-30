@@ -6,10 +6,15 @@ using UnityEngine;
 public class LandState : PlayerState
 {
     [SerializeField] private float stiffTime;
+    [SerializeField] private ParticleSystem landVFX;
     public override void Enter()
     {
         base.Enter();
         playerController.SetPlayerVelocity(Vector3.zero);
+        GameObject landParticle = PoolManager.Instance.GetAObjFromPool(landVFX.gameObject);
+        landParticle.AddComponent<ParticleSystemManager>();
+        landParticle.transform.position = playerController.transform.position;
+        landParticle.transform.rotation = Quaternion.identity;
     }
 
     public override void LogicalUpdate()

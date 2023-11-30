@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRigidbody.useGravity = false;
         playerRigidbody.velocity = Vector3.zero;
+        playerRigidbody.detectCollisions = false;
     }
 
     public void SetPlayerVelocity(Vector3 velocity)

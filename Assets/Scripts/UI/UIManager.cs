@@ -38,6 +38,7 @@ public class UIManager : MonoBehaviour
             AudioClip audioClip = defeatClip[Random.Range(0, defeatClip.Length)];
             SoundEffectPlayer.AudioSource.PlayOneShot(audioClip);
         }
+        clearanceTimer.GetComponent<Canvas>().enabled = false;
         Cursor.lockState = CursorLockMode.None;
     }
     

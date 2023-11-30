@@ -4,38 +4,38 @@ using UnityEngine;
 
 public class PickUpManager : MonoBehaviour
 {
-    protected void TriggerParticleSystem(ParticleSystem particleSystem)
+    public void TriggerParticleSystem(ParticleSystem particleSystem)
     {
-        GameObject gateTriggerParticle = PoolManager.Instance.GetAObjFromPool(particleSystem.gameObject);
-        gateTriggerParticle.AddComponent<ParticleSystemManager>();
-        gateTriggerParticle.transform.position = transform.position;
-        gateTriggerParticle.transform.rotation = Quaternion.identity;
+        GameObject particle = PoolManager.Instance.GetAObjFromPool(particleSystem.gameObject);
+        particle.AddComponent<ParticleSystemManager>();
+        particle.transform.position = transform.position;
+        particle.transform.rotation = Quaternion.identity;
     }
 
-    protected void TriggerAudioSource(AudioClip audioSource)
+    public void TriggerAudioSource(AudioClip audioSource)
     {
         SoundEffectPlayer.AudioSource.PlayOneShot(audioSource);
     }
     
-    protected void TriggerAudioSource(AudioClip[] audioSources)
+    public void TriggerAudioSource(AudioClip[] audioSources)
     {
         AudioClip audioClip = audioSources[Random.Range(0, audioSources.Length)];
         SoundEffectPlayer.AudioSource.PlayOneShot(audioClip);
     }
 
-    protected void DisableGameObjectComponent(MeshRenderer renderer, Collider collider)
+    public void DisableGameObjectComponent(MeshRenderer renderer, Collider collider)
     {
         renderer.enabled = false;
         collider.enabled = false;
     }
 
-    protected void GetGameObjectComponent(GameObject gameObject, out MeshRenderer renderer, out Collider collider)
+    public void GetGameObjectComponent(GameObject gameObject, out MeshRenderer renderer, out Collider collider)
     {
         renderer = gameObject.GetComponentInChildren<MeshRenderer>();
         collider = gameObject.GetComponent<Collider>();
     }
 
-    protected IEnumerator EnableGameObjectComponent(WaitForSeconds resetTime, MeshRenderer renderer, Collider collider)
+    public IEnumerator EnableGameObjectComponent(WaitForSeconds resetTime, MeshRenderer renderer, Collider collider)
     {
         yield return resetTime;
         collider.enabled = true;
